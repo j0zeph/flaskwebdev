@@ -37,6 +37,9 @@
         {% endblock %}
 
         {% block content %}
+        <div class="container mt-5">
+            {% block page_content %} {% endblock %}
+        </div>
         {% endblock %}
 
         <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
