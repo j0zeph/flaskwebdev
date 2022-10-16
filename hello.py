@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 
 from datetime import datetime
+from dotenv import load_dotenv
 from flask import Flask, render_template
 from flask_moment import Moment
+import os
 
+
+# take environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('secret_key')
+print(app.config['SECRET_KEY'])
 
 moment = Moment(app)
 
