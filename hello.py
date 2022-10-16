@@ -12,14 +12,12 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('secret_key')
-print(app.config['SECRET_KEY'])
 
-moment = Moment(app)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', current_time=datetime.utcnow())
+    return render_template('index.html')
 
 
 @app.route('/user/<username>')
