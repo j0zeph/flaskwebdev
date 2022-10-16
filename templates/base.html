@@ -49,6 +49,7 @@
         {% block scripts %}
             <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
             {{ moment.include_moment() }}
+            {{ moment.locale('es') }}
         {% endblock %}
     </body>
 </html>
