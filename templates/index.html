@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 
 {% block page_content %}
-    <h1>Hello World!</h1>
+    <h1>Hello, 
+        {% if name %}
+            {{ name }}
+        {% else %}
+            Stranger
+        {% endif %}!
+    </h1>
+
     <hr>
+
+    <div class="mt-5">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label(class='form-label') }} 
+            {{ form.name(class='form-control') }}
+            <div class="mt-3">
+                {{ form.submit(class='btn btn-lg', id='submit-dark') }}
+            </div>
+        </form>
+    </div>
 {% endblock %}
